@@ -116,7 +116,7 @@ Rectangle {
         anchors.margins:        ScreenTools.defaultFontPixelHeight * 0.66
         visible:                currentToolbar !== planViewToolbar && _activeVehicle && !_communicationLost && x > (toolsFlickable.x + toolsFlickable.contentWidth + ScreenTools.defaultFontPixelWidth)
         fillMode:               Image.PreserveAspectFit
-        source:                 _outdoorPalette ? _brandImageOutdoor : _brandImageIndoor
+        source :                "/qmlimages/BAR_logo.png"
         mipmap:                 true
 
         property bool   _outdoorPalette:        qgcPal.globalTheme === QGCPalette.Light
