@@ -75,20 +75,8 @@ ColumnLayout {
         if (!vehicle) {
             vehicle = QGroundControl.multiVehicleManager.offlineEditingVehicle
         }
-
-        if(vehicle.multiRotor) {
-            modelContainer.source = "/checklists/MultiRotorChecklist.qml"
-        } else if(vehicle.vtol) {
-            modelContainer.source = "/checklists/VTOLChecklist.qml"
-        } else if(vehicle.rover) {
-            modelContainer.source = "/checklists/RoverChecklist.qml"
-        } else if(vehicle.sub) {
-            modelContainer.source = "/checklists/SubChecklist.qml"
-        } else if(vehicle.fixedWing) {
-            modelContainer.source = "/checklists/FixedWingChecklist.qml"
-        } else {
-            modelContainer.source = "/checklists/DefaultChecklist.qml"
-        }
+        
+        modelContainer.source = "/checklists/SentinusChecklist.qml"
         return
     }
 
