@@ -32,6 +32,7 @@ doc/doxy.log
 deploy/mac
 deploy/linux
 controller_log*
+
 *.app
 *.ncb
 *.vcproj
