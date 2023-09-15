@@ -14,7 +14,7 @@ mkdir -p build
 # whoami
 cd ${WORKSPACE}
 
-docker run --rm -v ${PWD}:/project/source -v ${PWD}/build:/project/build qgc-linux-docker
+docker run --rm --user jenkins -v ${PWD}:/project/source -v ${PWD}/build:/project/build qgc-linux-docker
 
 cd ${WORKSPACE}/build
 ../deploy/create_linux_appimage.sh ../ ./staging
