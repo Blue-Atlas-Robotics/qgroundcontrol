@@ -22,6 +22,7 @@ usr="--user $(id -u jenkins):$(id -g jenkins)"
 docker run --rm ${usr} \
 -v ${PWD}:/project/source \
 -v ${PWD}/build:/project/build \
+-v /var/lib/jenkins/.ccache_qgroundcontrol:/var/lib/jenkins/.ccache \
 -v /etc/passwd:/etc/passwd:ro \
 -v /etc/shadow:/etc/shadow:ro \
 -v /etc/group:/etc/group:ro \
