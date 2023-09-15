@@ -2,6 +2,8 @@
 
 set +eux
 
+whoami
+
 # Uncomment this if docker file is not built yet.
 # TODO, put if statement here.
 #docker build --file ./deploy/docker/Dockerfile-build-linux -t qgc-linux-docker .
