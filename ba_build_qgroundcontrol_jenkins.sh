@@ -10,19 +10,16 @@ id
 #docker build --file ./deploy/docker/Dockerfile-build-linux -t qgc-linux-docker .
 
 mkdir -p build
-# sudo chown user:user build
+mkdir -p "${HOME}/.ccache_qgroundcontrol"
 
-# su - user <<!
-# user
-# whoami
 cd ${WORKSPACE}
 
-usr="--user $(id -u jenkins):$(id -g jenkins)"
+usr="--user $(id -u):$(id -g)"
 
 docker run --rm ${usr} \
 -v ${PWD}:/project/source \
 -v ${PWD}/build:/project/build \
--v /var/lib/jenkins/.ccache_qgroundcontrol:/var/lib/jenkins/.ccache \
+-v "${HOME}/.ccache_qgroundcontrol":"${HOME}/.ccache" \
 -v /etc/passwd:/etc/passwd:ro \
 -v /etc/shadow:/etc/shadow:ro \
 -v /etc/group:/etc/group:ro \
