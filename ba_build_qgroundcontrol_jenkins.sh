@@ -3,6 +3,7 @@
 set +eux
 
 whoami
+id
 
 # Uncomment this if docker file is not built yet.
 # TODO, put if statement here.
