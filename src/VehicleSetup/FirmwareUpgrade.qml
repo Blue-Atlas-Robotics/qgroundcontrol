@@ -30,7 +30,8 @@ SetupPage {
 
     Component {
         id: firmwarePageComponent
-
+        visible: false
+        
         ColumnLayout {
             width:   availableWidth
             height:  availableHeight

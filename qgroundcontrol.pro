@@ -706,6 +706,7 @@ HEADERS += \
     src/Vehicle/Actuators/GeometryImage.h \
     src/Vehicle/Actuators/Mixer.h \
     src/Vehicle/Actuators/MotorAssignment.h \
+    src/Vehicle/BarometerFactGroup.h \
     src/Vehicle/CompInfo.h \
     src/Vehicle/CompInfoActuators.h \
     src/Vehicle/CompInfoEvents.h \
@@ -965,6 +966,7 @@ SOURCES += \
     src/Vehicle/Actuators/GeometryImage.cc \
     src/Vehicle/Actuators/Mixer.cc \
     src/Vehicle/Actuators/MotorAssignment.cc \
+    src/Vehicle/BarometerFactGroup.cc \
     src/Vehicle/CompInfo.cc \
     src/Vehicle/CompInfoActuators.cc \
     src/Vehicle/CompInfoEvents.cc \

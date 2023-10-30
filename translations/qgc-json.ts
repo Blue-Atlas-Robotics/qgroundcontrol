@@ -113,6 +113,27 @@
     </message>
 </context>
 <context>
+    <name>BarometerFact.json</name>
+    <message>
+        <extracomment>.QGC.MetaData.Facts[batteryFunction].enumStrings, </extracomment>
+        <location filename="../src/Vehicle/BarometerFact.json"/>
+        <source>n/a,All Flight Systems,Propulsion,Avionics,Payload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <extracomment>.QGC.MetaData.Facts[batteryType].enumStrings, </extracomment>
+        <location filename="../src/Vehicle/BarometerFact.json"/>
+        <source>n/a,LIPO,LIFE,LION,NIMH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <extracomment>.QGC.MetaData.Facts[chargeState].enumStrings, </extracomment>
+        <location filename="../src/Vehicle/BarometerFact.json"/>
+        <source>n/a,Ok,Low,Critical,Emergency,Failed,Unhealthy,Charging</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GPSFact.json</name>
     <message>
         <extracomment>.QGC.MetaData.Facts[lock].enumStrings, </extracomment>

@@ -20,6 +20,8 @@ endif()
 add_library(Vehicle
 	Autotune.cpp
 	Autotune.h
+	BarometerFactGroup.cc
+	BarometerFactGroup.h
 	CompInfo.cc
 	CompInfo.h
 	CompInfoActuators.cc

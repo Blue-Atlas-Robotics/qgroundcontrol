@@ -4390,6 +4390,55 @@ Click Ok to start the auto-tuning process.
     </message>
 </context>
 <context>
+    <name>BarometerIndicator</name>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="82"/>
+        <source>100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="145"/>
+        <source>Battery Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="168"/>
+        <source>Battery %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="169"/>
+        <source>Charge State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="170"/>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="171"/>
+        <source>Remaining</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="172"/>
+        <source>Voltage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="173"/>
+        <source>Consumed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="174"/>
+        <source>Temperature</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/toolbar/BarometerIndicator.qml" line="175"/>
+        <source>Function</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BlankPlanCreator</name>
     <message>
         <location filename="../src/MissionManager/BlankPlanCreator.cc" line="16"/>

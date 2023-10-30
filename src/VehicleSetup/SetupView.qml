@@ -230,6 +230,7 @@ Rectangle {
                 exclusiveGroup:     setupButtonGroup
                 text:               qsTr("Summary")
                 Layout.fillWidth:   true
+                visible:            false
 
                 onClicked: showSummaryPanel()
             }
@@ -239,7 +240,7 @@ Rectangle {
                 imageResource:      "/qmlimages/FirmwareUpgradeIcon.png"
                 setupIndicator:     false
                 exclusiveGroup:     setupButtonGroup
-                visible:            !ScreenTools.isMobile && _corePlugin.options.showFirmwareUpgrade
+                visible:            false
                 text:               qsTr("Firmware")
                 Layout.fillWidth:   true
 
@@ -267,29 +268,29 @@ Rectangle {
                 Layout.fillWidth:   true
                 onClicked:          showPanel(this, "JoystickConfig.qml")
             }
-
-            Repeater {
-                id:     componentRepeater
-                model:  _fullParameterVehicleAvailable ? QGroundControl.multiVehicleManager.activeVehicle.autopilot.vehicleComponents : 0
-
-                SubMenuButton {
-                    imageResource:      modelData.iconResource
-                    setupIndicator:     modelData.requiresSetup
-                    setupComplete:      modelData.setupComplete
-                    exclusiveGroup:     setupButtonGroup
-                    text:               modelData.name
-                    visible:            modelData.setupSource.toString() !== ""
-                    Layout.fillWidth:   true
-                    onClicked:          showVehicleComponentPanel(modelData)
-                }
-            }
+            
+            //Repeater {
+            //    id:     componentRepeater
+            //    model:  _fullParameterVehicleAvailable ? QGroundControl.multiVehicleManager.activeVehicle.autopilot.vehicleComponents : 0
+//
+            //    SubMenuButton {
+            //        imageResource:      modelData.iconResource
+            //        setupIndicator:     modelData.requiresSetup
+            //        setupComplete:      modelData.setupComplete
+            //        exclusiveGroup:     setupButtonGroup
+            //        text:               modelData.name
+            //        visible:            false
+            //        Layout.fillWidth:   true
+            //        onClicked:          showVehicleComponentPanel(modelData)
+            //    }
+            //}
 
             SubMenuButton {
                 setupIndicator:     false
                 exclusiveGroup:     setupButtonGroup
-                visible:            QGroundControl.multiVehicleManager.parameterReadyVehicleAvailable &&
-                                    !QGroundControl.multiVehicleManager.activeVehicle.usingHighLatencyLink &&
-                                    _corePlugin.showAdvancedUI
+                visible:            false //QGroundControl.multiVehicleManager.parameterReadyVehicleAvailable &&
+                                    //!QGroundControl.multiVehicleManager.activeVehicle.usingHighLatencyLink &&
+                                    //_corePlugin.showAdvancedUI
                 text:               qsTr("Parameters")
                 Layout.fillWidth:   true
                 onClicked:          showPanel(this, "SetupParameterEditor.qml")

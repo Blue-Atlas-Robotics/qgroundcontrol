@@ -41,7 +41,7 @@ Row {
             anchors.top:        parent.top
             anchors.bottom:     parent.bottom
             source:             modelData
-            visible:            item.showIndicator
+            visible:            true
         }
     }
 

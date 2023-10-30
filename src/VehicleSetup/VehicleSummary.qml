@@ -25,6 +25,7 @@ Rectangle {
     anchors.rightMargin: ScreenTools.defaultFontPixelWidth
     anchors.leftMargin:  ScreenTools.defaultFontPixelWidth
     color:          qgcPal.window
+    visible: false
 
     property real _minSummaryW:     ScreenTools.isTinyScreen ? ScreenTools.defaultFontPixelWidth * 28 : ScreenTools.defaultFontPixelWidth * 36
     property real _summaryBoxWidth: _minSummaryW
