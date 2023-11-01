@@ -159,9 +159,9 @@ ApplicationWindow {
     //    showTool(qsTr("Analyze Tools"), "AnalyzeView.qml", "/qmlimages/Analyze.svg")
     //}
 
-    //function showSetupTool() {
-    //    showTool(qsTr("Vehicle Setup"), "SetupView.qml", "/qmlimages/Gears.svg")
-    //}
+    function showSetupTool() {
+        showTool(qsTr("Vehicle Setup"), "SetupView.qml", "/qmlimages/Gears.svg")
+    }
 
     function showSettingsTool() {
         showTool(qsTr("Application Settings"), "AppSettings.qml", "/res/QGCLogoWhite")
@@ -297,20 +297,20 @@ ApplicationWindow {
                     Layout.margins: toolSelectDialog._margins
                     spacing:        ScreenTools.defaultFontPixelWidth
 
-                    //SubMenuButton {
-                    //    id:                 setupButton
-                    //    height:             toolSelectDialog._toolButtonHeight
-                    //    Layout.fillWidth:   true
-                    //    text:               qsTr("Vehicle Setup")
-                    //    imageColor:         qgcPal.text
-                    //    imageResource:      "/qmlimages/Gears.svg"
-                    //    onClicked: {
-                    //        if (!mainWindow.preventViewSwitch()) {
-                    //            toolSelectDialog.close()
-                    //            mainWindow.showSetupTool()
-                    //        }
-                    //    }
-                    //}
+                    SubMenuButton {
+                        id:                 setupButton
+                        height:             toolSelectDialog._toolButtonHeight
+                        Layout.fillWidth:   true
+                        text:               qsTr("Vehicle Setup")
+                        imageColor:         qgcPal.text
+                        imageResource:      "/qmlimages/Gears.svg"
+                        onClicked: {
+                            if (!mainWindow.preventViewSwitch()) {
+                                toolSelectDialog.close()
+                                mainWindow.showSetupTool()
+                            }
+                        }
+                    }
 
                     //SubMenuButton {
                     //    id:                 analyzeButton
