@@ -34,26 +34,40 @@ Rectangle {
             id:         grid
             columns:    2
 
-            QGCLabel { text: qsTr("QGroundControl User Guide") }
+            QGCLabel { text: qsTr("Blue Atlas Robotics") }
             QGCLabel {
                 linkColor:          qgcPal.text
-                text:               "<a href=\"https://docs.qgroundcontrol.com\">https://docs.qgroundcontrol.com</a>"
+                text:               "<a href=\"https://blueatlasrobotics.com/\">https://blueatlasrobotics.com/</a>"
                 onLinkActivated:    Qt.openUrlExternally(link)
             }
 
-            QGCLabel { text: qsTr("PX4 Users Discussion Forum") }
+            QGCLabel { text: qsTr("Blue Atlas Robotics contact form") }
             QGCLabel {
                 linkColor:          qgcPal.text
-                text:               "<a href=\"http://discuss.px4.io/c/qgroundcontrol\">http://discuss.px4.io/c/qgroundcontrol</a>"
+                text:               "<a href=\"https://blueatlasrobotics.com/contact/\">https://blueatlasrobotics.com/contact/</a>"
                 onLinkActivated:    Qt.openUrlExternally(link)
             }
 
-            QGCLabel { text: qsTr("ArduPilot Users Discussion Forum") }
-            QGCLabel {
-                linkColor:          qgcPal.text
-                text:               "<a href=\"https://discuss.ardupilot.org/c/ground-control-software/qgroundcontrol\">https://discuss.ardupilot.org/c/ground-control-software/qgroundcontrol</a>"
-                onLinkActivated:    Qt.openUrlExternally(link)
-            }
+            //QGCLabel { text: qsTr("QGroundControl User Guide") }
+            //QGCLabel {
+            //    linkColor:          qgcPal.text
+            //    text:               "<a href=\"https://docs.qgroundcontrol.com\">https://docs.qgroundcontrol.com</a>"
+            //    onLinkActivated:    Qt.openUrlExternally(link)
+            //}
+
+            //QGCLabel { text: qsTr("PX4 Users Discussion Forum") }
+            //QGCLabel {
+            //    linkColor:          qgcPal.text
+            //    text:               "<a href=\"http://discuss.px4.io/c/qgroundcontrol\">http://discuss.px4.io/c/qgroundcontrol</a>"
+            //    onLinkActivated:    Qt.openUrlExternally(link)
+            //}
+
+            //QGCLabel { text: qsTr("ArduPilot Users Discussion Forum") }
+            //QGCLabel {
+            //    linkColor:          qgcPal.text
+            //    text:               "<a href=\"https://discuss.ardupilot.org/c/ground-control-software/qgroundcontrol\">https://discuss.ardupilot.org/c/ground-control-software/qgroundcontrol</a>"
+            //    onLinkActivated:    Qt.openUrlExternally(link)
+            //}
         }
     }
 }

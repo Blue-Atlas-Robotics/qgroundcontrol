@@ -1,0 +1,21 @@
+{
+    "version":      1,
+    "fileType":     "FactMetaData",
+    "QGC.MetaData.Facts":
+[
+{
+    "name":             "depth",
+    "shortDesc":        "Depth",
+    "type":             "double",
+    "decimalPlaces":    2,
+    "units":            "m"
+},
+{
+    "name":             "temperature",
+    "shortDesc":        "Temperature",
+    "type":             "double",
+    "decimalPlaces":    0,
+    "units":            "C"
+}
+]
+}

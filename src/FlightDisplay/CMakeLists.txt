@@ -30,6 +30,7 @@ add_custom_target(FligthDisplayQml
 		GuidedValueSlider.qml
 		GuidedToolStripAction.qml
 		MultiRotorChecklist.qml
+		SentinusChecklist.qml
 		MultiVehicleList.qml
 		PreFlightBatteryCheck.qml
 		PreFlightCheckList.qml

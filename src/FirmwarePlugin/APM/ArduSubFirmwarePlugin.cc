@@ -195,6 +195,7 @@ const QVariantList& ArduSubFirmwarePlugin::toolIndicators(const Vehicle* vehicle
         _toolIndicators = QVariantList({
             QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/MessageIndicator.qml")),
             QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/BatteryIndicator.qml")),
+            QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/BarometerIndicator.qml")),
             QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/JoystickIndicator.qml")),
         });
     }

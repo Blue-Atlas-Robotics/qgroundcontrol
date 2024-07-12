@@ -40,6 +40,7 @@
 #include "VehicleEscStatusFactGroup.h"
 #include "VehicleEstimatorStatusFactGroup.h"
 #include "VehicleHygrometerFactGroup.h"
+#include "BarometerFactGroup.h"
 #include "VehicleLinkManager.h"
 #include "MissionManager.h"
 #include "GeoFenceManager.h"
@@ -70,6 +71,7 @@ class TrajectoryPoints;
 class TerrainProtocolHandler;
 class ComponentInformationManager;
 class VehicleBatteryFactGroup;
+class BarometerFactGroup;
 class SendMavCommandWithSignallingTest;
 class SendMavCommandWithHandlerTest;
 class RequestMessageTest;
@@ -99,6 +101,7 @@ class Vehicle : public FactGroup
     friend class SendMavCommandWithHandlerTest;     // Unit test
     friend class RequestMessageTest;                // Unit test
     friend class GimbalController;                  // Allow GimbalController to call _addFactGroup
+    friend class BarometerFactGroup;                // Allow BarometerFactGroup to call _addFactGroup
 
 public:
     Vehicle(LinkInterface*          link,
@@ -327,6 +330,7 @@ public:
     Q_PROPERTY(FactGroup*           generator       READ generatorFactGroup         CONSTANT)
     Q_PROPERTY(FactGroup*           efi             READ efiFactGroup               CONSTANT)
     Q_PROPERTY(QmlObjectListModel*  batteries       READ batteries                  CONSTANT)
+    Q_PROPERTY(QmlObjectListModel*  barometer       READ barometer                  CONSTANT)
     Q_PROPERTY(Actuators*           actuators       READ actuators                  CONSTANT)
     Q_PROPERTY(HealthAndArmingCheckReport* healthAndArmingCheckReport READ healthAndArmingCheckReport CONSTANT)
 
@@ -723,6 +727,7 @@ public:
     FactGroup* hygrometerFactGroup          () { return &_hygrometerFactGroup; }
     FactGroup* generatorFactGroup           () { return &_generatorFactGroup; }
     FactGroup* efiFactGroup                 () { return &_efiFactGroup; }
+    QmlObjectListModel* barometer           () { return &_barometerFactGroup; }
     QmlObjectListModel* batteries           () { return &_batteryFactGroupListModel; }
 
     MissionManager*                 missionManager      () { return _missionManager; }
@@ -1432,6 +1437,7 @@ private:
     VehicleEFIFactGroup             _efiFactGroup;
     TerrainFactGroup                _terrainFactGroup;
     QmlObjectListModel              _batteryFactGroupListModel;
+    QmlObjectListModel              _barometerFactGroup;
 
     TerrainProtocolHandler* _terrainProtocolHandler = nullptr;
 

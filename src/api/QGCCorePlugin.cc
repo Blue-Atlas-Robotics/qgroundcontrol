@@ -131,8 +131,8 @@ QVariantList &QGCCorePlugin::settingsPages()
                                             QUrl::fromUserInput("qrc:/qml/GeneralSettings.qml"),
                                             QUrl::fromUserInput("qrc:/res/gear-white.svg"));
         _p->settingsList.append(QVariant::fromValue(reinterpret_cast<QmlComponentInfo*>(_p->pGeneral)));
-        _p->pCommLinks = new QmlComponentInfo(tr("Comm Links"),
-                                              QUrl::fromUserInput("qrc:/qml/LinkSettings.qml"),
+        /*_p->pCommLinks = new QmlComponentInfo(tr("Comm Links"),
+                                             QUrl::fromUserInput("qrc:/qml/LinkSettings.qml"),
                                               QUrl::fromUserInput("qrc:/res/waves.svg"));
         _p->settingsList.append(QVariant::fromValue(reinterpret_cast<QmlComponentInfo*>(_p->pCommLinks)));
         _p->pOfflineMaps = new QmlComponentInfo(tr("Offline Maps"),
@@ -160,7 +160,7 @@ QVariantList &QGCCorePlugin::settingsPages()
         _p->settingsList.append(QVariant::fromValue(reinterpret_cast<QmlComponentInfo*>(_p->pRemoteID)));
         _p->pConsole = new QmlComponentInfo(tr("Console"),
                                             QUrl::fromUserInput("qrc:/qml/QGroundControl/Controls/AppMessages.qml"));
-        _p->settingsList.append(QVariant::fromValue(reinterpret_cast<QmlComponentInfo*>(_p->pConsole)));
+        _p->settingsList.append(QVariant::fromValue(reinterpret_cast<QmlComponentInfo*>(_p->pConsole)));*/
         _p->pHelp = new QmlComponentInfo(tr("Help"),
                                          QUrl::fromUserInput("qrc:/qml/HelpSettings.qml"));
         _p->settingsList.append(QVariant::fromValue(reinterpret_cast<QmlComponentInfo*>(_p->pHelp)));

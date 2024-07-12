@@ -49,6 +49,7 @@
 #include "ComponentInformationManager.h"
 #include "InitialConnectStateMachine.h"
 #include "VehicleBatteryFactGroup.h"
+#include "BarometerFactGroup.h"
 #include "EventHandler.h"
 #include "Actuators/Actuators.h"
 #include "GimbalController.h"
@@ -685,6 +686,9 @@ void Vehicle::_mavlinkMessageReceived(LinkInterface* link, mavlink_message_t mes
     _remoteIDManager->mavlinkMessageReceived(message);
 
     _waitForMavlinkMessageMessageReceived(message);
+
+    // Add the barometer
+    BarometerFactGroup::createBarometer(this, message);
 
     // Battery fact groups are created dynamically as new batteries are discovered
     VehicleBatteryFactGroup::handleMessageForFactGroupCreation(this, message);

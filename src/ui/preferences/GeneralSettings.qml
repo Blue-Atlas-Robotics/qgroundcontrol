@@ -98,14 +98,14 @@ Rectangle {
                             anchors.horizontalCenter:   parent.horizontalCenter
                             spacing:                    _margins
 
-                            FactCheckBox {
-                                id:             useCheckList
-                                text:           qsTr("Use Preflight Checklist")
-                                fact:           _useChecklist
-                                visible:        _useChecklist.visible && QGroundControl.corePlugin.options.preFlightChecklistUrl.toString().length
-
-                                property Fact _useChecklist: QGroundControl.settingsManager.appSettings.useChecklist
-                            }
+                            //FactCheckBox {
+                            //    id:             useCheckList
+                            //    text:           qsTr("Use Preflight Checklist")
+                            //    fact:           _useChecklist
+                            //    visible:        _useChecklist.visible && QGroundControl.corePlugin.options.preFlightChecklistUrl.toString().length
+                            //
+                            //    property Fact _useChecklist: QGroundControl.settingsManager.appSettings.useChecklist
+                            //}
 
                             FactCheckBox {
                                 text:           qsTr("Enforce Preflight Checklist")
@@ -149,13 +149,13 @@ Rectangle {
                                 }
                             }
 
-                            FactCheckBox {
-                                text:       qsTr("Use Vertical Instrument Panel")
-                                visible:    _alternateInstrumentPanel.visible
-                                fact:       _alternateInstrumentPanel
-
-                                property Fact _alternateInstrumentPanel: QGroundControl.settingsManager.flyViewSettings.alternateInstrumentPanel
-                            }
+                            //FactCheckBox {
+                            //    text:       qsTr("Use Vertical Instrument Panel")
+                            //    visible:    _alternateInstrumentPanel.visible
+                            //    fact:       _alternateInstrumentPanel
+                            //
+                            //    property Fact _alternateInstrumentPanel: QGroundControl.settingsManager.flyViewSettings.alternateInstrumentPanel
+                            //}
 
                             FactCheckBox {
                                 text:       qsTr("Show additional heading indicators on Compass")
@@ -252,48 +252,48 @@ Rectangle {
                                 }
                             }
 
-                            GridLayout {
-                                columns: 2
-
-                                QGCLabel {
-                                    text:               qsTr("Guided Command Settings")
-                                    Layout.columnSpan:  2
-                                    Layout.alignment:   Qt.AlignHCenter
-                                }
-
-                                QGCLabel {
-                                    text:       qsTr("Minimum Altitude")
-                                    visible:    guidedMinAltField.visible
-                                }
-                                FactTextField {
-                                    id:                     guidedMinAltField
-                                    Layout.preferredWidth:  _valueFieldWidth
-                                    visible:                fact.visible
-                                    fact:                   _flyViewSettings.guidedMinimumAltitude
-                                }
-
-                                QGCLabel {
-                                    text:       qsTr("Maximum Altitude")
-                                    visible:    guidedMaxAltField.visible
-                                }
-                                FactTextField {
-                                    id:                     guidedMaxAltField
-                                    Layout.preferredWidth:  _valueFieldWidth
-                                    visible:                fact.visible
-                                    fact:                   _flyViewSettings.guidedMaximumAltitude
-                                }
-
-                                QGCLabel {
-                                    text:       qsTr("Go To Location Max Distance")
-                                    visible:    maxGotoDistanceField.visible
-                                }
-                                FactTextField {
-                                    id:                     maxGotoDistanceField
-                                    Layout.preferredWidth:  _valueFieldWidth
-                                    visible:                fact.visible
-                                    fact:                  _flyViewSettings.maxGoToLocationDistance
-                                }
-                            }
+                            //GridLayout {
+                            //    columns: 2
+                            //
+                            //    QGCLabel {
+                            //        text:               qsTr("Guided Command Settings")
+                            //        Layout.columnSpan:  2
+                            //        Layout.alignment:   Qt.AlignHCenter
+                            //    }
+                            //
+                            //    QGCLabel {
+                            //        text:       qsTr("Minimum Altitude")
+                            //        visible:    guidedMinAltField.visible
+                            //    }
+                            //    FactTextField {
+                            //        id:                     guidedMinAltField
+                            //        Layout.preferredWidth:  _valueFieldWidth
+                            //        visible:                false
+                            //        fact:                   _flyViewSettings.guidedMinimumAltitude
+                            //    }
+                            //
+                            //    QGCLabel {
+                            //        text:       qsTr("Maximum Altitude")
+                            //        visible:    guidedMaxAltField.visible
+                            //    }
+                            //    FactTextField {
+                            //        id:                     guidedMaxAltField
+                            //        Layout.preferredWidth:  _valueFieldWidth
+                            //        visible:                false
+                            //        fact:                   _flyViewSettings.guidedMaximumAltitude
+                            //    }
+                            //
+                            //    QGCLabel {
+                            //        text:       qsTr("Go To Location Max Distance")
+                            //        visible:    maxGotoDistanceField.visible
+                            //    }
+                            //    FactTextField {
+                            //        id:                     maxGotoDistanceField
+                            //        Layout.preferredWidth:  _valueFieldWidth
+                            //        visible:                fact.visible
+                            //        fact:                  _flyViewSettings.maxGoToLocationDistance
+                            //    }
+                            //}
 
                             GridLayout {
                                 id:         videoGrid
@@ -425,7 +425,7 @@ Rectangle {
                     QGCLabel {
                         id:         planViewSectionLabel
                         text:       qsTr("Plan View")
-                        visible:    _planViewSettings.visible
+                        visible:    false
                     }
                     Rectangle {
                         Layout.preferredHeight: planViewCol.height + (_margins * 2)
@@ -557,54 +557,54 @@ Rectangle {
                                     visible:                QGroundControl.settingsManager.appSettings.indoorPalette.visible
                                 }
 
-                                QGCLabel {
-                                    text:       qsTr("Map Provider")
-                                    width:      _labelWidth
-                                }
-
-                                QGCComboBox {
-                                    id:             mapCombo
-                                    model:          QGroundControl.mapEngineManager.mapProviderList
-                                    Layout.preferredWidth:  _comboFieldWidth
-                                    onActivated: {
-                                        _mapProvider = textAt(index)
-                                        QGroundControl.settingsManager.flightMapSettings.mapProvider.value=textAt(index)
-                                        QGroundControl.settingsManager.flightMapSettings.mapType.value=QGroundControl.mapEngineManager.mapTypeList(textAt(index))[0]
-                                    }
-                                    Component.onCompleted: {
-                                        var index = mapCombo.find(_mapProvider)
-                                        if(index < 0) index = 0
-                                        mapCombo.currentIndex = index
-                                    }
-                                }
-                                QGCLabel {
-                                    text:       qsTr("Map Type")
-                                    width:      _labelWidth
-                                }
-                                QGCComboBox {
-                                    id:             mapTypeCombo
-                                    model:          QGroundControl.mapEngineManager.mapTypeList(_mapProvider)
-                                    Layout.preferredWidth:  _comboFieldWidth
-                                    onActivated: {
-                                        _mapType = textAt(index)
-                                        QGroundControl.settingsManager.flightMapSettings.mapType.value=textAt(index)
-                                    }
-                                    Component.onCompleted: {
-                                        var index = mapTypeCombo.find(_mapType)
-                                        if(index < 0) index = 0
-                                        mapTypeCombo.currentIndex = index
-                                    }
-                                }
+                                //QGCLabel {
+                                //    text:       qsTr("Map Provider")
+                                //    width:      _labelWidth
+                                //}
+                                //
+                                //QGCComboBox {
+                                //    id:             mapCombo
+                                //    model:          QGroundControl.mapEngineManager.mapProviderList
+                                //    Layout.preferredWidth:  _comboFieldWidth
+                                //    onActivated: {
+                                //        _mapProvider = textAt(index)
+                                //        QGroundControl.settingsManager.flightMapSettings.mapProvider.value=textAt(index)
+                                //        QGroundControl.settingsManager.flightMapSettings.mapType.value=QGroundControl.mapEngineManager.mapTypeList(textAt(index))[0]
+                                //    }
+                                //    Component.onCompleted: {
+                                //        var index = mapCombo.find(_mapProvider)
+                                //        if(index < 0) index = 0
+                                //        mapCombo.currentIndex = index
+                                //    }
+                                //}
+                                //QGCLabel {
+                                //    text:       qsTr("Map Type")
+                                //    width:      _labelWidth
+                                //}
+                                //QGCComboBox {
+                                //    id:             mapTypeCombo
+                                //    model:          QGroundControl.mapEngineManager.mapTypeList(_mapProvider)
+                                //    Layout.preferredWidth:  _comboFieldWidth
+                                //    onActivated: {
+                                //        _mapType = textAt(index)
+                                //        QGroundControl.settingsManager.flightMapSettings.mapType.value=textAt(index)
+                                //    }
+                                //    Component.onCompleted: {
+                                //        var index = mapTypeCombo.find(_mapType)
+                                //        if(index < 0) index = 0
+                                //        mapTypeCombo.currentIndex = index
+                                //    }
+                                //}
 
                                 QGCLabel {
                                     text:                   qsTr("Stream GCS Position")
-                                    visible:                _followTarget.visible
+                                    visible:                false
                                 }
                                 FactComboBox {
                                     Layout.preferredWidth:  _comboFieldWidth
                                     fact:                   _followTarget
                                     indexModel:             false
-                                    visible:                _followTarget.visible
+                                    visible:                false
                                 }
                                 QGCLabel {
                                     text:                           qsTr("UI Scaling")
@@ -695,7 +695,7 @@ Rectangle {
                                 FactCheckBox {
                                     text:       qsTr("Check for Internet connection")
                                     fact:       _checkInternet
-                                    visible:    _checkInternet && _checkInternet.visible
+                                    visible:    false
                                     property Fact _checkInternet: QGroundControl.settingsManager.appSettings.checkInternet
                                 }
 
@@ -767,7 +767,7 @@ Rectangle {
                     QGCLabel {
                         id:         telemetryLogSectionLabel
                         text:       qsTr("Telemetry Logs from Vehicle")
-                        visible:    telemetryRect.visible
+                        visible:    false
                     }
                     Rectangle {
                         id:                     telemetryRect
@@ -786,7 +786,7 @@ Rectangle {
                                 id:         promptSaveLog
                                 text:       qsTr("Save log after each flight")
                                 fact:       _telemetrySave
-                                visible:    _telemetrySave.visible
+                                visible:    false
                                 enabled:    !_disableAllDataPersistence
                                 property Fact _telemetrySave: QGroundControl.settingsManager.appSettings.telemetrySave
                             }
@@ -794,7 +794,7 @@ Rectangle {
                                 id:         logIfNotArmed
                                 text:       qsTr("Save logs even if vehicle was not armed")
                                 fact:       _telemetrySaveNotArmed
-                                visible:    _telemetrySaveNotArmed.visible
+                                visible:    false
                                 enabled:    promptSaveLog.checked && !_disableAllDataPersistence
                                 property Fact _telemetrySaveNotArmed: QGroundControl.settingsManager.appSettings.telemetrySaveNotArmed
                             }
@@ -802,7 +802,7 @@ Rectangle {
                                 id:         promptSaveCsv
                                 text:       qsTr("Save CSV log of telemetry data")
                                 fact:       _saveCsvTelemetry
-                                visible:    _saveCsvTelemetry.visible
+                                visible:    false
                                 enabled:    !_disableAllDataPersistence
                                 property Fact _saveCsvTelemetry: QGroundControl.settingsManager.appSettings.saveCsvTelemetry
                             }
@@ -813,13 +813,13 @@ Rectangle {
                     QGCLabel {
                         id:         autoConnectSectionLabel
                         text:       qsTr("AutoConnect to the following devices")
-                        visible:    QGroundControl.settingsManager.autoConnectSettings.visible
+                        visible:    false
                     }
                     Rectangle {
                         Layout.preferredWidth:  autoConnectCol.width + (_margins * 2)
                         Layout.preferredHeight: autoConnectCol.height + (_margins * 2)
                         color:                  qgcPal.windowShade
-                        visible:                autoConnectSectionLabel.visible
+                        visible:                false
                         Layout.fillWidth:       true
 
                         ColumnLayout {
@@ -848,7 +848,7 @@ Rectangle {
                                     FactCheckBox {
                                         text:       autoConnectRepeater.names[index]
                                         fact:       modelData
-                                        visible:    modelData.visible
+                                        visible:   false
                                     }
                                 }
                             }
@@ -857,9 +857,7 @@ Rectangle {
                                 Layout.fillWidth:   false
                                 Layout.alignment:   Qt.AlignHCenter
                                 columns:            2
-                                visible:            !ScreenTools.isMobile
-                                                    && QGroundControl.settingsManager.autoConnectSettings.autoConnectNmeaPort.visible
-                                                    && QGroundControl.settingsManager.autoConnectSettings.autoConnectNmeaBaud.visible
+                                visible:           false
 
                                 QGCLabel {
                                     text: qsTr("NMEA GPS Device")
@@ -929,7 +927,7 @@ Rectangle {
                     QGCLabel {
                         id:         rtkSectionLabel
                         text:       qsTr("RTK GPS")
-                        visible:    QGroundControl.settingsManager.rtkSettings.visible
+                        visible:    false
                     }
                     Rectangle {
                         Layout.preferredHeight: rtkGrid.height + (_margins * 2)
@@ -1063,7 +1061,7 @@ Rectangle {
                     QGCLabel {
                         id:         adsbSectionLabel
                         text:       qsTr("ADSB Server")
-                        visible:    QGroundControl.settingsManager.adsbVehicleManagerSettings.visible
+                        visible:    false
                     }
                     Rectangle {
                         Layout.preferredHeight: adsbGrid.y + adsbGrid.height + _margins
@@ -1126,7 +1124,7 @@ Rectangle {
                     QGCLabel {
                         id:         brandImageSectionLabel
                         text:       qsTr("Brand Image")
-                        visible:    QGroundControl.settingsManager.brandImageSettings.visible && !ScreenTools.isMobile
+                        visible:    false
                     }
                     Rectangle {
                         Layout.preferredWidth:  brandImageGrid.width + (_margins * 2)

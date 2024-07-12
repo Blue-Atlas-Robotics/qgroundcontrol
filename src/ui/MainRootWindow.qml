@@ -155,9 +155,9 @@ ApplicationWindow {
         toolDrawer.visible      = true
     }
 
-    function showAnalyzeTool() {
-        showTool(qsTr("Analyze Tools"), "AnalyzeView.qml", "/qmlimages/Analyze.svg")
-    }
+    //function showAnalyzeTool() {
+    //    showTool(qsTr("Analyze Tools"), "AnalyzeView.qml", "/qmlimages/Analyze.svg")
+    //}
 
     function showSetupTool() {
         showTool(qsTr("Vehicle Setup"), "SetupView.qml", "/qmlimages/Gears.svg")
@@ -312,21 +312,21 @@ ApplicationWindow {
                         }
                     }
 
-                    SubMenuButton {
-                        id:                 analyzeButton
-                        height:             toolSelectDialog._toolButtonHeight
-                        Layout.fillWidth:   true
-                        text:               qsTr("Analyze Tools")
-                        imageResource:      "/qmlimages/Analyze.svg"
-                        imageColor:         qgcPal.text
-                        visible:            QGroundControl.corePlugin.showAdvancedUI
-                        onClicked: {
-                            if (!mainWindow.preventViewSwitch()) {
-                                toolSelectDialog.close()
-                                mainWindow.showAnalyzeTool()
-                            }
-                        }
-                    }
+                    //SubMenuButton {
+                    //    id:                 analyzeButton
+                    //    height:             toolSelectDialog._toolButtonHeight
+                    //    Layout.fillWidth:   true
+                    //    text:               qsTr("Analyze Tools")
+                    //    imageResource:      "/qmlimages/Analyze.svg"
+                    //    imageColor:         qgcPal.text
+                    //    visible:            QGroundControl.corePlugin.showAdvancedUI
+                    //    onClicked: {
+                    //        if (!mainWindow.preventViewSwitch()) {
+                    //            toolSelectDialog.close()
+                    //            mainWindow.showAnalyzeTool()
+                    //        }
+                    //    }
+                    //}
 
                     SubMenuButton {
                         id:                 settingsButton
